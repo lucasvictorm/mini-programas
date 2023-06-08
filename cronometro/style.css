@@ -47,6 +47,7 @@ section{
     position: absolute;
     right: 0;
     top: -100px;
+    user-select: none;
 }
 
 #modos{
@@ -106,6 +107,10 @@ section{
 
 .modo-ativo #tempo{
     color: var(--cor-secundaria-dark);
+}
+
+#botoes{
+    user-select: none;
 }
 
 #play{

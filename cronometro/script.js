@@ -15,12 +15,14 @@ window.onload = ()=>{
 }
 
 function iniciar(){
-    if(document.getElementById("tempo").innerHTML != "00:00"){
+    parar()
+    /*if(document.getElementById("tempo").innerHTML != "00:00"){
         parar()
-    }
+    }*/
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
     document.getElementById('tempo').innerHTML = `00:00`
     contador(dminutes, uminutes, dseconds, useconds)
+    ativo = true;
 }
 function contador(dminutes, uminutes, dseconds, useconds){
     
@@ -49,5 +51,11 @@ function contador(dminutes, uminutes, dseconds, useconds){
     
 }
 function parar(){
-    clearInterval(seconds)
+    try{
+        clearInterval(seconds)
+    }
+    catch{
+        return;
+    }
+    
 }
