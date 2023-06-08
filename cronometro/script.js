@@ -1,9 +1,8 @@
 window.onload = ()=>{
-    let useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+    useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
 }
 
 function iniciar(){
-    let useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
     if(useconds  > 0 || dseconds  > 0 || uminutes  > 0 || dminutes > 0){
         parar()
     }
@@ -11,7 +10,8 @@ function iniciar(){
     contador(dminutes, uminutes, dseconds, useconds)
 }
 function contador(dminutes, uminutes, dseconds, useconds){
-    var seconds = setInterval(() => {
+    useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+     seconds = setInterval(() => {
         ++useconds
         if(useconds >= 10){
             useconds = 0;
