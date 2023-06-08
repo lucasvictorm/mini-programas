@@ -43,6 +43,12 @@ section{
     gap: 50px;
 }
 
+#label-modos{
+    position: absolute;
+    right: 0;
+    top: -100px;
+}
+
 #modos{
     position: relative;
     display: flex;
