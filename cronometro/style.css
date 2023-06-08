@@ -3,11 +3,24 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
     -webkit-tap-highlight-color: none;
 }
-html{
-    background-color: #291E45;
+
+:root{
+    --cor-principal-light: rgb(255, 255, 255);
+    --cor-secundaria-light: var( --cor-principal-dark);
+    --cor-principal-dark: #1e1634;
+    --cor-secundaria-dark: var(--cor-principal-light);
+}
+body{
+    background-color: var(--cor-principal-light);
     font-family: 'Poppins', sans-serif;
+    transition: background-color .5s;
+}
+
+.dark-mode{
+    background-color: var(--cor-principal-dark);
 }
 
 main{
@@ -18,26 +31,93 @@ main{
 }
 
 section{
+    width: 300px;
+    position: relative;
+    top: -50px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    gap: 50px;
+}
+
+#modos{
+    position: relative;
+    display: flex;
+    gap: 3px;
+    background-color: var(--cor-secundaria-light);
+    border-radius: 50px;
+    height: 30px;
+    align-items: center;
+    width: 60px;
+}
+
+.modo-ativo #modos{
+    background-color: white;
+}
+#mode-check{
+    display: none;
+}
+
+.modo-ativo #imode-circle{
+    left: 30px;
+    background-color: var(--cor-principal-dark);
+}
+
+.modo-ativo #light-icon{
+    display: none;
+}
+.modo-ativo #dark-icon{
+    display: inline;
+    color: white;
+}
+
+.mode-circle{
+    position: absolute;
+    background-color: white;
+    height: 110%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -5px;
+    transition-property: left;
+    transition: .5s;
+}
+
+#dark-icon{
+    display: none;
+    color: white;
 }
 
 #tempo{
-    color: #ffffff;;
+    color: var(--cor-secundaria-light);
     font-size: 4em;
 }
 
+.modo-ativo #tempo{
+    color: var(--cor-secundaria-dark);
+}
+
 #play{
-    color: white;
+    color: var(--cor-secundaria-light);
     font-size: 3.5em;
     cursor: pointer;
+}
+
+.modo-ativo #play{
+    color: var(--cor-secundaria-dark);
 }
 
 #stop{
     cursor: pointer;
-    color: white;
+    color: var(--cor-secundaria-light);
     font-size: 3.5em;
+}
+
+.modo-ativo #stop{
+    color: var(--cor-secundaria-dark);
 }

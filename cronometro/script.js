@@ -1,3 +1,15 @@
+const botao = document.getElementById("modos");
+const corpo = document.querySelector("body")
+const darkIcon = document.getElementById("dark-icon")
+const lightIcon = document.getElementById("light-icon")
+botao.onclick = function (){
+    corpo.classList.toggle("modo-ativo")
+    corpo.classList.toggle("dark-mode")
+
+}
+
+
+
 window.onload = ()=>{
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
 }
