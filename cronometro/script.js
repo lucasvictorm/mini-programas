@@ -1,13 +1,17 @@
+window.onload = ()=>{
+    let useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+}
+
 function iniciar(){
     let useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
-    if(document.getElementById('tempo').innerHTML > 0){
+    if(useconds  > 0 || dseconds  > 0 || uminutes  > 0 || dminutes > 0){
         parar()
     }
     document.getElementById('tempo').innerHTML = `00:00`
     contador(dminutes, uminutes, dseconds, useconds)
 }
 function contador(dminutes, uminutes, dseconds, useconds){
-    seconds = setInterval(() => {
+    var seconds = setInterval(() => {
         ++useconds
         if(useconds >= 10){
             useconds = 0;
