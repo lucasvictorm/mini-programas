@@ -3,6 +3,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    -webkit-tap-highlight-color: none;
 }
 html{
     background-color: #291E45;
