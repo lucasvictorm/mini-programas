@@ -113,6 +113,10 @@ section{
     user-select: none;
 }
 
+#check-start{
+    display: none;
+}
+
 #play{
     color: var(--cor-secundaria-light);
     font-size: 3.5em;
@@ -120,6 +124,16 @@ section{
 }
 
 .modo-ativo #play{
+    color: var(--cor-secundaria-dark);
+}
+
+#pause{
+    color: var(--cor-secundaria-light);
+    font-size: 3.5em;
+    cursor: pointer;
+}
+
+.modo-ativo #pause{
     color: var(--cor-secundaria-dark);
 }
 
