@@ -7,6 +7,7 @@ let botao = document.getElementById("modos");
 
 window.onload = ()=>{
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`
 }
 
 botao.onclick = function (){
@@ -16,9 +17,10 @@ botao.onclick = function (){
 }
 
 function crescente(){
-    document.getElementById("crescente").classList.add("timer-atual")
-    document.getElementById("decrescente").classList.remove("timer-atual")
-    onCrescente.checked = true;
+    document.getElementById("crescente").classList.add("timer-atual");
+    document.getElementById("decrescente").classList.remove("timer-atual");
+    onCrescente.checked = true;;
+    trocarElementos();
 }
 function decrescente(){
     document.getElementById("decrescente").classList.add("timer-atual");
@@ -28,12 +30,45 @@ function decrescente(){
 }
 
 function trocarElementos(){
+    const addRemoveIcons = document.querySelectorAll(".add-remove-icon");
     if(onDecrescente.checked){
-        document.getElementById('tempo').style.display = "none";
+       addRemoveIcons.forEach((element) => {
+        element.style.display = "block";
+       })
+    }else if(onCrescente.checked){
+        addRemoveIcons.forEach((element) => {
+            element.style.display = "none";
+        })
     }
 }
 
-
+function addseconds(){
+    useconds++;
+    if(useconds >= 10){
+        useconds = 0;
+        dseconds++;
+        if(dseconds >= 6){
+            dseconds = 0;
+        }
+    }
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+}
+function removeseconds(){
+    if(dseconds == 0 && useconds == 0){
+        return;
+    }else{
+        useconds--;
+    if(useconds < 0){
+        useconds = 9;
+        dseconds--;
+        if(dseconds < 0){
+            dseconds = 0;
+        }
+    }
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+    }
+    
+}
 
 function iniciar(){
     if(checkStart.checked){

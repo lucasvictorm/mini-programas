@@ -123,25 +123,37 @@ section{
     transition: background-color .5s, color .5s;
 }
 
-/*#crescente{
-    
-}*/
+input[name=cresOn]{
+    display: none;
+}
 
 .modo-ativo .timer-atual{
     background-color: var(--cor-secundaria-dark);
     color: var(--cor-principal-dark);
 }
 
-/*#decrescente{
-    background-color: #ffffff;
-    transition: .5s;
-}*/
-
-
-input[type="number"]{
-    width: 40px;
+#add-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 50px;
+    width: 250px;
 }
 
+#remove-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 250px;
+    bottom: 90px;
+}
+
+section .add-remove-icon{
+    font-size: 2.3em;
+    display: none;
+    cursor: pointer;
+    user-select: none;
+}
 
 #tempo{
     color: var(--cor-secundaria-light);
