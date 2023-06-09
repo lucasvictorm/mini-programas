@@ -22,9 +22,24 @@
                             </span>
                     </div>
                 </div>
-                <input type="checkbox" name="mode-check" id="mode-check">
+
             </label>
-            <p id="tempo">00:00</p>
+
+            <div id="opcoes-timer">
+                
+                    <button id="crescente" class="opcoes-botoes timer-atual" onclick="crescente()">Crescente</button>
+
+                    <button id="decrescente" class="opcoes-botoes" onclick="decrescente()">Decrescente</button>
+                
+                <input type="radio" name="cresOn" id="crescenOn">
+                <input type="radio" name="cresOn" id="decresOn">
+            </div>
+            <div id="tempo-regresivo">
+                <input type="number" name="rdminute" id="rdminute" maxlength="1" max="9" width="10">
+                <input type="number" name="rdminute" id="rdminute">
+                <input type="number" name="rdminute" id="rdminute">
+            </div>
+            <h1 id="tempo">00:00</h1>
             <div id="botoes">
                 <input type="checkbox" name="check-start" id="check-start">
                 <span class="material-symbols-outlined botao" id="play" onclick="iniciar()">play_circle</span>

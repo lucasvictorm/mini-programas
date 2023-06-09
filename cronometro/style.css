@@ -4,7 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root{
@@ -64,9 +64,6 @@ section{
 .modo-ativo #modos{
     background-color: white;
 }
-#mode-check{
-    display: none;
-}
 
 .modo-ativo #imode-circle{
     left: 30px;
@@ -99,6 +96,52 @@ section{
     display: none;
     color: white;
 }
+
+#opcoes-timer{
+    border-bottom: 2px solid var(--cor-secundaria-light);
+}
+
+.opcoes-botoes{
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 0;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px 5px 0 0;
+    background-color: var(--cor-principal-light);
+    transition: background-color .5s, color .5s;
+}
+
+.modo-ativo .opcoes-botoes{
+    background-color: var(--cor-principal-dark);
+    color: var(--cor-secundaria-dark);
+}
+
+.timer-atual{
+    background-color: var(--cor-secundaria-light);
+    color: var(--cor-principal-light);
+    transition: background-color .5s, color .5s;
+}
+
+/*#crescente{
+    
+}*/
+
+.modo-ativo .timer-atual{
+    background-color: var(--cor-secundaria-dark);
+    color: var(--cor-principal-dark);
+}
+
+/*#decrescente{
+    background-color: #ffffff;
+    transition: .5s;
+}*/
+
+
+input[type="number"]{
+    width: 40px;
+}
+
 
 #tempo{
     color: var(--cor-secundaria-light);

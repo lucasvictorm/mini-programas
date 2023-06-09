@@ -1,6 +1,13 @@
 const corpo = document.querySelector("body");
 const checkStart = document.getElementById("check-start"); 
+const onCrescente = document.getElementById("crescenOn");
+const onDecrescente = document.getElementById("decresOn");
+
 let botao = document.getElementById("modos"); 
+
+window.onload = ()=>{
+    useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+}
 
 botao.onclick = function (){
     corpo.classList.toggle("modo-ativo")
@@ -8,10 +15,25 @@ botao.onclick = function (){
 
 }
 
-
-window.onload = ()=>{
-    useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
+function crescente(){
+    document.getElementById("crescente").classList.add("timer-atual")
+    document.getElementById("decrescente").classList.remove("timer-atual")
+    onCrescente.checked = true;
 }
+function decrescente(){
+    document.getElementById("decrescente").classList.add("timer-atual");
+    document.getElementById("crescente").classList.remove("timer-atual");
+    onDecrescente.checked = true;
+    trocarElementos();
+}
+
+function trocarElementos(){
+    if(onDecrescente.checked){
+        document.getElementById('tempo').style.display = "none";
+    }
+}
+
+
 
 function iniciar(){
     if(checkStart.checked){
@@ -52,9 +74,6 @@ function contagem(){
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`
     }, 1000)
 }
-/*function contador(dminutes, uminutes, dseconds, useconds){
-    
-}*/
 
 function pausar(){
     try{
