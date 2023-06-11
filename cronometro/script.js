@@ -42,17 +42,27 @@ function trocarElementos(){
     }
 }
 
+/*Adicionar e remover segundos */
+
 function addseconds(){
     useconds++;
-    if(useconds >= 10){
-        useconds = 0;
-        dseconds++;
-        if(dseconds >= 6){
-            dseconds = 0;
+        if(useconds >= 10){
+            useconds = 0;
+            dseconds++;
+            if(dseconds >= 6){
+                dseconds = 0;
+            }
         }
-    }
-    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+        document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
+
+function holderaddseconds(){
+    holderSeconds = setInterval(addseconds, 100)  
+}
+function stopseconds(){
+    clearInterval(holderSeconds)
+}
+
 function removeseconds(){
     if(dseconds == 0 && useconds == 0){
         return;
@@ -67,8 +77,56 @@ function removeseconds(){
     }
     document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
     }
-    
 }
+function holderremoveseconds(){
+    holderSeconds = setInterval(removeseconds, 100)
+}
+
+/*Adicionar e remover minutos */
+
+function addminutes(){
+    if(dminutes == 6){
+        uminutes = 0;
+    }
+    else{
+        uminutes++;
+        if(uminutes >= 10){
+            uminutes = 0;
+            dminutes++;
+            if(dminutes > 6){
+                dminutes = 0;
+            }
+        }
+        document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+}
+    }
+    
+function holderaddminutes(){
+    holderMinutes = setInterval(addminutes, 100);
+}
+function stopminutes(){
+    clearInterval(holderMinutes)
+}
+
+function removeminutes(){
+    if(dminutes == 0 && uminutes == 0){
+        return;
+    }else{
+        uminutes--;
+    if(uminutes < 0){
+        uminutes = 9;
+        dminutes--;
+        if(dminutes < 0){
+            dminutes = 0;
+        }
+    }
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+    }
+}
+function holderremoveminutes(){
+    holderMinutes = setInterval(removeminutes, 100);
+}
+
 
 function iniciar(){
     if(checkStart.checked){
@@ -120,9 +178,6 @@ function pausar(){
         return;
     }
 }
-
-
-
 
 function parar(){
     pausar()

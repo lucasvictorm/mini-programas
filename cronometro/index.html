@@ -35,10 +35,11 @@
                 <input type="radio" name="cresOn" id="decresOn">
             </div>
             <div id="add-buttons">
-                <span class="material-symbols-outlined add-icon add-remove-icon" id="add-minute">
+                <span class="material-symbols-outlined add-icon add-remove-icon" id="add-minute" onclick="
+                    addminutes()" onmousedown="holderaddminutes()" onmouseup="stopminutes()">
                     add_circle
                 </span>
-                <span class="material-symbols-outlined add-icon add-remove-icon" id="add-second" onclick="addseconds()">
+                <span class="material-symbols-outlined add-icon add-remove-icon" id="add-second" onclick="addseconds()" onmousedown="holderaddseconds()" onmouseup="stopseconds()">
                     add_circle
                 </span>
             </div>
@@ -46,10 +47,11 @@
             <h1 id="tempo">00:00</h1>
 
             <div id="remove-buttons">
-                <span class="material-symbols-outlined remove-icon add-remove-icon" id="remove-minute">
+                <span class="material-symbols-outlined remove-icon add-remove-icon" id="remove-minute" onclick="
+                removeminutes()" onmousedown="holderremoveminutes()" onmouseup="stopminutes()">
                     do_not_disturb_on
                 </span>
-                <span class="material-symbols-outlined remove-icon add-remove-icon" id="remove-second" onclick="removeseconds()">
+                <span class="material-symbols-outlined remove-icon add-remove-icon" id="remove-second" onclick="removeseconds()" onmousedown="holderremoveseconds()" onmouseup="stopseconds()">
                         do_not_disturb_on
                 </span>
             </div>
