@@ -155,6 +155,10 @@ section .add-remove-icon{
     user-select: none;
 }
 
+.modo-ativo .add-remove-icon{
+    color: white;
+}
+
 #tempo{
     color: var(--cor-secundaria-light);
     font-size: 4em;
