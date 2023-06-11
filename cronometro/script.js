@@ -133,10 +133,53 @@ function iniciar(){
         return;
     }else{
         checkStart.checked = true;
-        contagem()
+        if(onDecrescente.checked){
+            contagemRegressiva();
+        }else{
+            contagem();
+        }
+
     }
     
 }
+
+
+function contagemRegressiva(){
+    setInterval(() => {
+        if(useconds == 0 && dseconds == 0 && uminutes == 0 && dminutes == 0){
+            return;
+        }else{
+            --useconds;
+            if(useconds < 0){
+                if(dseconds >= 0){
+                    useconds = 9;
+                    dseconds--;
+                }
+                if(dseconds < 0){
+                    if(uminutes >= 0){
+                            --uminutes;
+                            useconds = 9;
+                            dseconds = 5;
+                    }
+                }
+                if(uminutes < 0){
+                    if(dminutes > 0){
+                        dminutes--;
+                        uminutes = 9;
+                        dseconds = 5;
+                        useconds = 9;
+                    }
+                }
+        } 
+        
+            
+    }
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`
+    }, 1000)
+    
+
+}
+
 
 function contagem(){
 
