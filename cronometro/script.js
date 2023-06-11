@@ -152,7 +152,7 @@ function iniciar(){
 function contagemRegressiva(){
     seconds = setInterval(() => {
         if(useconds == 0 && dseconds == 0 && uminutes == 0 && dminutes == 0){
-            return;
+            parar();
         }else{
             --useconds;
             if(useconds < 0){
