@@ -2,6 +2,7 @@ const corpo = document.querySelector("body");
 const checkStart = document.getElementById("check-start"); 
 const onCrescente = document.getElementById("crescenOn");
 const onDecrescente = document.getElementById("decresOn");
+const addRemoveIcons = document.querySelectorAll(".add-remove-icon");
 
 let botao = document.getElementById("modos"); 
 
@@ -30,7 +31,8 @@ function decrescente(){
 }
 
 function trocarElementos(){
-    const addRemoveIcons = document.querySelectorAll(".add-remove-icon");
+    parar();
+    
     if(onDecrescente.checked){
        addRemoveIcons.forEach((element) => {
         element.style.display = "block";
@@ -131,9 +133,12 @@ function holderremoveminutes(){
 function iniciar(){
     if(checkStart.checked){
         return;
-    }else{
+    }else{  
         checkStart.checked = true;
         if(onDecrescente.checked){
+            addRemoveIcons.forEach((element) => {
+                element.style.display = "none";
+            })
             contagemRegressiva();
         }else{
             contagem();
@@ -145,7 +150,7 @@ function iniciar(){
 
 
 function contagemRegressiva(){
-    setInterval(() => {
+    seconds = setInterval(() => {
         if(useconds == 0 && dseconds == 0 && uminutes == 0 && dminutes == 0){
             return;
         }else{
@@ -213,6 +218,11 @@ function contagem(){
 
 function pausar(){
     try{
+        if(onDecrescente.checked){
+            addRemoveIcons.forEach((element) => {
+                element.style.display = "block";
+            })
+        }
         clearInterval(seconds)
         console.log(seconds)
         checkStart.checked = false;
@@ -223,6 +233,8 @@ function pausar(){
 }
 
 function parar(){
+    
+    
     pausar()
     document.getElementById('tempo').innerHTML = `00:00`
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0;
