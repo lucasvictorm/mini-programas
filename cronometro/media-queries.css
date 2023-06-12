@@ -1,4 +1,4 @@
-@media screen and (min-width: 450px) and (max-width: 650px){
+@media screen and (min-width: 450px){
     body{
         display: flex;
         gap: 0px;
