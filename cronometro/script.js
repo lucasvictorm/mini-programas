@@ -66,10 +66,12 @@ function stopseconds(){
 }
 
 function removeseconds(){
-    if(dseconds == 0 && useconds == 0){
-        return;
-    }else{
-        useconds--;
+    
+    useconds--;
+    if(dseconds == 0 && useconds < 0){
+        dseconds = 5;
+        useconds = 9;
+    }
     if(useconds < 0){
         useconds = 9;
         dseconds--;
@@ -78,7 +80,6 @@ function removeseconds(){
         }
     }
     document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
-    }
 }
 function holderremoveseconds(){
     holderSeconds = setInterval(removeseconds, 100)
@@ -102,6 +103,9 @@ function addminutes(){
         if(dminutes == 6 && uminutes > 0){
             dminutes = 0;
             uminutes = 0;
+        }else if(dminutes == 6 && uminutes == 0){
+            dseconds = 0;
+            useconds = 0;
         }
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
@@ -115,19 +119,23 @@ function stopminutes(){
 }
 
 function removeminutes(){
-    if(dminutes == 0 && uminutes == 0){
-        return;
-    }else{
         uminutes--;
-    if(uminutes < 0){
-        uminutes = 9;
-        dminutes--;
-        if(dminutes < 0){
-            dminutes = 0;
+        if(dminutes == 0 && uminutes < 0){
+            dminutes = 6;
+            uminutes = 0;
         }
-    }
-    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
-    }
+        if(uminutes < 0){
+            uminutes = 9;
+            dminutes--;
+            if(dminutes < 0){
+                dminutes = 0;
+            }
+        }
+        if(dminutes == 6 && uminutes == 0){
+            dseconds = 0;
+            useconds = 0;
+        }
+        document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
 function holderremoveminutes(){
     holderMinutes = setInterval(removeminutes, 100);
