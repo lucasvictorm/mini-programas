@@ -35,7 +35,7 @@ header{
 }
 
 header #cabecalho{
-    gap: 10px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

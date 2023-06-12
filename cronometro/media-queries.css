@@ -1,6 +1,28 @@
-@media (orientation: landscape){
-    main #label-modos{
-        top: 0;
-        right: -60px;
+@media screen and (min-width: 450px) and (max-width: 650px){
+    body{
+        display: flex;
+        gap: 0px;
+    }
+    main{
+        height: 100%;
+        
+        justify-content: center;
+        align-items: center;
+
+    }
+   main section{
+        text-align: center;
+        width: auto;
+        gap: 10px;
+    }
+    section #botoes{
+        position: relative;
+        bottom: -10px;
+    }
+    section #add-buttons{
+        top: -20px;
+    }
+    section #remove-buttons{
+        top: 77px;
     }
 }
