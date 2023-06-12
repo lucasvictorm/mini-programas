@@ -173,7 +173,7 @@ input[name=cresOn]{
     justify-content: space-evenly;
     position: absolute;
     width: 250px;
-    bottom: 90px;
+    top: 157px;
 }
 
 section .add-remove-icon{
