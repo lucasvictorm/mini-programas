@@ -24,30 +24,33 @@ body{
     background-color: var(--cor-principal-dark);
 }
 
-main{
-    height: 100%;
+header{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
 }
 
-section{
-    width: 300px;
-    position: relative;
-    
-    text-align: center;
+header #cabecalho{
+    gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    gap: 50px;
+    width: 300px;
 }
 
-#label-modos{
-    position: absolute;
-    right: 0;
-    top: -100px;
+#cabecalho h1{
+    font-size: 2em;
+}
+
+.modo-ativo #cabecalho h1{
+    color: var(--cor-secundaria-dark);
+}
+#box-modos{
     user-select: none;
 }
 
@@ -97,6 +100,26 @@ section{
     display: none;
     color: white;
 }
+
+main{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+main section{
+    width: 300px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    gap: 50px;
+}
+
+
 
 .modo-ativo #opcoes-timer{
     border-bottom-color: var(--cor-secundaria-dark);
