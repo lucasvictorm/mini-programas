@@ -95,9 +95,13 @@ function addminutes(){
         if(uminutes >= 10){
             uminutes = 0;
             dminutes++;
-            if(dminutes > 6){
-                dminutes = 0;
+            if(dminutes == 6){
+                uminutes = 0;
             }
+        }
+        if(dminutes == 6 && uminutes > 0){
+            dminutes = 0;
+            uminutes = 0;
         }
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
