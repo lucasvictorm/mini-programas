@@ -98,6 +98,10 @@ section{
     color: white;
 }
 
+.modo-ativo #opcoes-timer{
+    border-bottom-color: var(--cor-secundaria-dark);
+}
+
 #opcoes-timer{
     border-bottom: 2px solid var(--cor-secundaria-light);
 }
