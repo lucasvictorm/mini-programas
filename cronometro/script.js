@@ -87,10 +87,10 @@ function holderremoveseconds(){
 /*Adicionar e remover minutos */
 
 function addminutes(){
-    if(dminutes == 6){
+   /* if(dminutes == 6){
         uminutes = 0;
-    }
-    else{
+    }*/
+    /*else{*/
         uminutes++;
         if(uminutes >= 10){
             uminutes = 0;
@@ -101,7 +101,7 @@ function addminutes(){
         }
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
-    }
+    /*}*/
     
 function holderaddminutes(){
     holderMinutes = setInterval(addminutes, 100);

@@ -164,7 +164,7 @@ input[name=cresOn]{
     display: flex;
     justify-content: space-evenly;
     position: absolute;
-    top: 50px;
+    top: -20px;
     width: 250px;
 }
 
@@ -173,7 +173,7 @@ input[name=cresOn]{
     justify-content: space-evenly;
     position: absolute;
     width: 250px;
-    top: 157px;
+    top: 77px;
 }
 
 section .add-remove-icon{
