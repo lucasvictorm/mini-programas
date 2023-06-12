@@ -1,0 +1,6 @@
+@media (orientation: landscape){
+    main #label-modos{
+        top: 0;
+        right: -60px;
+    }
+}
