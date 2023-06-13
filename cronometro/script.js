@@ -46,7 +46,7 @@ function trocarElementos(){
 
 /*Adicionar e remover segundos */
 
-function addseconds(){
+function addSeconds(){
     useconds++;
         if(useconds >= 10){
             useconds = 0;
@@ -58,14 +58,14 @@ function addseconds(){
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
 
-function holderaddseconds(){
-    holderSeconds = setInterval(addseconds, 100)  
+function holderAddSeconds(){
+    holderSeconds = setInterval(addSeconds, 100)  
 }
-function stopseconds(){
+function stopSeconds(){
     clearInterval(holderSeconds)
 }
 
-function removeseconds(){
+function removeSeconds(){
     
     useconds--;
     if(dseconds == 0 && useconds < 0){
@@ -81,13 +81,13 @@ function removeseconds(){
     }
     document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
-function holderremoveseconds(){
-    holderSeconds = setInterval(removeseconds, 100)
+function holderRemoveSeconds(){
+    holderSeconds = setInterval(removeSeconds, 100)
 }
 
 /*Adicionar e remover minutos */
 
-function addminutes(){
+function addMinutes(){
    /* if(dminutes == 6){
         uminutes = 0;
     }*/
@@ -111,14 +111,14 @@ function addminutes(){
 }
     /*}*/
     
-function holderaddminutes(){
-    holderMinutes = setInterval(addminutes, 100);
+function holderAddMinutes(){
+    holderMinutes = setInterval(addMinutes, 100);
 }
-function stopminutes(){
-    clearInterval(holderMinutes)
+function stopMinutes(){
+    clearInterval(holderMinutes);
 }
 
-function removeminutes(){
+function removeMinutes(){
         uminutes--;
         if(dminutes == 0 && uminutes < 0){
             dminutes = 6;
@@ -137,8 +137,8 @@ function removeminutes(){
         }
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
-function holderremoveminutes(){
-    holderMinutes = setInterval(removeminutes, 100);
+function holderRemoveMinutes(){
+    holderMinutes = setInterval(removeMinutes, 100);
 }
 
 
