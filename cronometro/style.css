@@ -102,7 +102,7 @@ header #cabecalho{
 }
 
 main{
-    height: 70%;
+    height: 30%;
     display: flex;
     justify-content: center;
     
@@ -162,17 +162,17 @@ input[name=cresOn]{
 
 #add-buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
     top: -20px;
-    width: 250px;
+    width: 135px;
 }
 
 #remove-buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
-    width: 250px;
+    width: 135px;
     top: 77px;
 }
 

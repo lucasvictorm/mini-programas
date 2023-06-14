@@ -252,3 +252,12 @@ function parar(){
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0;
     checkStart.checked = false;
 }
+
+addRemoveIcons.forEach((element) => {
+    element.addEventListener("pointerdown", () => {
+        element.style.fontSize  = "2.2em";
+    })
+    element.addEventListener("pointerup", () => {
+        element.style.fontSize = "2.3em";
+    })
+})
