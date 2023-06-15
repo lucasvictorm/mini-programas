@@ -5,18 +5,23 @@ const onDecrescente = document.getElementById("decresOn");
 const addRemoveIcons = document.querySelectorAll(".add-remove-icon");
 
 let botao = document.getElementById("modos"); 
+let useconds, dseconds, uminutesn, dminutes;
+let seconds;
 
+/*Inicializa as variáveis principais*/
 window.onload = ()=>{
     useconds  = 0, dseconds  = 0, uminutes  = 0, dminutes = 0
     document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`
 }
 
+/*Seletor de modo escuro*/
 botao.onclick = function (){
     corpo.classList.toggle("modo-ativo")
     corpo.classList.toggle("dark-mode")
 
 }
 
+/*Seletor de modos do timer*/
 function crescente(){
     document.getElementById("crescente").classList.add("timer-atual");
     document.getElementById("decrescente").classList.remove("timer-atual");
@@ -30,6 +35,7 @@ function decrescente(){
     trocarElementos();
 }
 
+/*Visibilidade dos botões de adição/remoção */
 function trocarElementos(){
     parar();
     
@@ -66,7 +72,6 @@ function stopSeconds(){
 }
 
 function removeSeconds(){
-    
     useconds--;
     if(dseconds == 0 && useconds < 0){
         dseconds = 5;
@@ -81,6 +86,7 @@ function removeSeconds(){
     }
     document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
+/*Repete a função ao segurar o botão */
 function holderRemoveSeconds(){
     holderSeconds = setInterval(removeSeconds, 100)
 }
@@ -88,28 +94,23 @@ function holderRemoveSeconds(){
 /*Adicionar e remover minutos */
 
 function addMinutes(){
-   /* if(dminutes == 6){
+    uminutes++;
+    if(uminutes >= 10){
         uminutes = 0;
-    }*/
-    /*else{*/
-        uminutes++;
-        if(uminutes >= 10){
+        dminutes++;
+        if(dminutes == 6){
             uminutes = 0;
-            dminutes++;
-            if(dminutes == 6){
-                uminutes = 0;
-            }
         }
-        if(dminutes == 6 && uminutes > 0){
-            dminutes = 0;
-            uminutes = 0;
-        }else if(dminutes == 6 && uminutes == 0){
-            dseconds = 0;
-            useconds = 0;
-        }
-        document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
+    }
+    if(dminutes == 6 && uminutes > 0){
+        dminutes = 0;
+        uminutes = 0;
+    }else if(dminutes == 6 && uminutes == 0){
+        dseconds = 0;
+        useconds = 0;
+    }
+    document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
-    /*}*/
     
 function holderAddMinutes(){
     holderMinutes = setInterval(addMinutes, 100);
@@ -137,11 +138,12 @@ function removeMinutes(){
         }
         document.getElementById('tempo').innerHTML = `${dminutes}${uminutes}:${dseconds}${useconds}`;
 }
+/*Repete a função ao segurar o botão */
 function holderRemoveMinutes(){
     holderMinutes = setInterval(removeMinutes, 100);
 }
 
-
+/*inicia a contagem de acordo com o modo selecionado e verifica se o timer já está funcionando */
 function iniciar(){
     if(checkStart.checked){
         return;
@@ -200,8 +202,6 @@ function contagemRegressiva(){
 
 function contagem(){
 
-    /*contador(dminutes, uminutes, dseconds, useconds)*/
-
     seconds = setInterval(() => {
         
         ++useconds
@@ -228,6 +228,7 @@ function contagem(){
     }, 1000)
 }
 
+/*pausa a contagem */
 function pausar(){
     try{
         if(onDecrescente.checked){
@@ -244,6 +245,7 @@ function pausar(){
     }
 }
 
+/*para acontagem, zerando o timer */
 function parar(){
     
     
@@ -253,6 +255,7 @@ function parar(){
     checkStart.checked = false;
 }
 
+/*Efeito de toque ao pressionar botões */
 addRemoveIcons.forEach((element) => {
     element.addEventListener("pointerdown", () => {
         element.style.fontSize  = "2.2em";

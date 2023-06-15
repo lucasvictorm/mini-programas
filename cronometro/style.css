@@ -24,6 +24,7 @@ body{
     background-color: var(--cor-principal-dark);
 }
 
+/*região do cabeçalho*/
 header{
     display: flex;
     justify-content: center;
@@ -50,6 +51,7 @@ header #cabecalho{
 .modo-ativo #cabecalho h1{
     color: var(--cor-secundaria-dark);
 }
+/*botão de modo claro/escuro*/
 #box-modos{
     user-select: none;
 }
@@ -100,7 +102,7 @@ header #cabecalho{
     display: none;
     color: white;
 }
-
+/*região main*/
 main{
     height: 30%;
     display: flex;
@@ -119,7 +121,7 @@ main section{
     gap: 50px;
 }
 
-
+/*modos crescente e decrescente*/
 
 .modo-ativo #opcoes-timer{
     border-bottom-color: var(--cor-secundaria-dark);
@@ -160,6 +162,7 @@ input[name=cresOn]{
     color: var(--cor-principal-dark);
 }
 
+/*botões de adicionar/remover*/
 #add-buttons{
     display: flex;
     justify-content: space-between;
@@ -186,7 +189,7 @@ section .add-remove-icon{
 .modo-ativo .add-remove-icon{
     color: white;
 }
-
+/*timer principal*/
 #tempo{
     color: var(--cor-secundaria-light);
     font-size: 4em;
@@ -196,6 +199,7 @@ section .add-remove-icon{
     color: var(--cor-secundaria-dark);
 }
 
+/*botões start,pause e parar*/
 #botoes{
     user-select: none;
 }
