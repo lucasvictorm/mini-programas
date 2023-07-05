@@ -54,6 +54,7 @@ header #cabecalho{
 /*botão de modo claro/escuro*/
 #box-modos{
     user-select: none;
+    cursor: pointer;
 }
 
 #modos{
